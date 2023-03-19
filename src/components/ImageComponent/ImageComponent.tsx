@@ -2,11 +2,11 @@ import './imageComponent.scss';
 
 interface Props {
   source: string;
-  title?: string;
+  alt?: string;
 }
 
-const ImageComponent = ({ source, title = '' }: Props) => {
-  return <img src={source} alt={title} className='image' />
+const ImageComponent = ({ source, alt = '' }: Props) => {
+  return <img src={source} alt={alt} className='image' />
 }
 
 export default ImageComponent;
