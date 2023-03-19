@@ -8,11 +8,11 @@ interface Props {
 }
 
 const Header = ({ title, style }: Props) => (
-  <div className='header' style={style}>
+  <header className='header' style={style}>
     <div className='header__container'>
       <h1>{title}</h1>
     </div>
-  </div>
+  </header>
 )
 
 export default Header;

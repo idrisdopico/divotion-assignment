@@ -3,12 +3,14 @@ import WishListCounter from "../WishListCounter";
 import { useMenuState } from "../../context/MenuContext";
 
 import './sideNav.scss';
+import useWishlistCount from "../../hooks/useWishlistCount";
 
 const SideNav = () => {
   const { isOpen, toggleIsOpen } = useMenuState();
+  const { count, increment, decrement } = useWishlistCount(0);
 
   return (
-    <div className='sideNav'>
+    <nav className='sideNav'>
       <div className='sideNav__buttonContainer'>
         <ButtonComponent
           title='Open WishList'
@@ -18,15 +20,20 @@ const SideNav = () => {
         />
       </div>
 
-      <div className={`sideNav__container ${isOpen && 'is-active'}`}>
+      <section className={`sideNav__container ${isOpen && 'is-active'}`}>
         <ButtonComponent
           title='Close WishList'
           onClick={() => toggleIsOpen(!isOpen)}
           className='sideNav__menuButton sideNav__menuButton--secondary'
         />
-        <h4>sidenav</h4>
-      </div>
-    </div>
+        <header>
+          <h4>Side navigation</h4>
+          <p>
+            We have {count === 0 ? 'no more' : count} {count === 1 ? 'item' : count === 0 ? '' : 'items'} in the wishlist
+          </p>
+        </header>
+      </section>
+    </nav>
   )
 }
 
