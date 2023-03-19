@@ -1,0 +1,17 @@
+.buttonComponent {
+  background-color: transparent;
+  border: 1px solid #0f0f0f;
+  border-radius: 5px;
+  padding: 8px;
+  transition: .25s background-color, .25s color;
+
+  &:hover {
+    cursor: pointer;
+    background-color: #0f0f0f;
+    color: #fff;
+  }
+
+  &:active {
+    background-color: #ec0000;
+  }
+}
